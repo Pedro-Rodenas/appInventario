@@ -1,6 +1,3 @@
-# Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
-# More GitHub Actions for Azure: https://github.com/Azure/actions
-
 name: Build and deploy PHP app to Azure Web App - pedrorodenas
 
 on:
@@ -33,36 +30,34 @@ jobs:
         if: steps.check_files.outputs.files_exists == 'true'
         run: composer validate --no-check-publish && composer install --prefer-dist --no-progress
 
-
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
         with:
           name: php-app
           path: .
 
-      deploy:
-        runs-on: ubuntu-latest
-        needs: build
-        
-        steps:
-          - name: Download artifact from build job
-            uses: actions/download-artifact@v4
-            with:
-              name: php-app
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
     
-          # 🟢 Login en Azure con tu Publish Profile
-          - name: Azure Login
-            uses: azure/login@v1
-            with:
-              publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-          
-          # 🚀 Despliegue a tu App Service
-          - name: 'Deploy to Azure Web App'
-            uses: azure/webapps-deploy@v3
-            id: deploy-to-webapp
-            with:
-              app-name: 'pedrorodenas'
-              slot-name: 'Production'
-              package: ./public
-              publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-    
+    steps:
+      - name: Download artifact from build job
+        uses: actions/download-artifact@v4
+        with:
+          name: php-app
+
+      # 🟢 Login en Azure con tu Publish Profile
+      - name: Azure Login
+        uses: azure/login@v1
+        with:
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
+      
+      # 🚀 Despliegue a tu App Service
+      - name: 'Deploy to Azure Web App'
+        uses: azure/webapps-deploy@v3
+        id: deploy-to-webapp
+        with:
+          app-name: 'pedrorodenas'
+          slot-name: 'Production'
+          package: ./public
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}

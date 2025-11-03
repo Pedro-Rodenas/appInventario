@@ -45,14 +45,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: php-app
-
-      # 🟢 Login en Azure con tu Publish Profile
-      - name: Azure Login
-        uses: azure/login@v1
-        with:
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE }}
-      
-      # 🚀 Despliegue a tu App Service
+  
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp

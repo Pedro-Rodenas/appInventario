@@ -18,7 +18,7 @@ Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 // ===== RUTA PRINCIPAL =====
 Route::get('/', function () {
     return redirect()->route('productos.index');
-})->middleware('auth'); // Solo usuarios autenticados
+})->middleware('auth');
 
 /* Controlador de Productos */
 Route::resource('productos', ProductoController::class)->middleware('auth');

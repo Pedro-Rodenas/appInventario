@@ -1,0 +1,37 @@
+/* Gráficos */
+.card-body canvas {
+    width: 100% !important;
+    height: 300px !important;
+    display: block;
+}
+
+/* Tarjetas resumen */
+#resumen-cards .card {
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+#resumen-cards .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Cabeceras de tarjetas */
+.card-header {
+    background-color: #f9f9f9 !important;
+    border-bottom: 2px solid #2B2D6E;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #2B2D6E;
+    text-align: center;
+}
+
+/* Títulos y subtítulos */
+h1.text-primary {
+    color: #2B2D6E;
+}
+
+p.text-muted {
+    color: #6c757d;
+}

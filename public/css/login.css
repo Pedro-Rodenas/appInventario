@@ -1,0 +1,146 @@
+/* ===== Contenedor principal ===== */
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    /* centro horizontal */
+    align-items: center;
+    /* centro vertical */
+    min-height: 100vh;
+    /* altura completa */
+    background-color: #f0f2f5;
+    /* fondo suave */
+    padding: 1rem;
+}
+
+/* ===== Card del login ===== */
+.login-card {
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    width: 400px;
+    max-width: 90%;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* ===== Título ===== */
+.login-card h3 {
+    color: #2B2D6E;
+    font-weight: 700;
+    font-size: 1.7rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+/* ===== Inputs ===== */
+.login-card .form-control {
+    width: 100%;
+    padding: 0.75rem 0rem;
+    padding-inline: 1rem;
+    margin-bottom: 1.2rem;
+    font-size: 1rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    transition: all 0.3s ease;
+    box-sizing: border-box !important;
+}
+
+.login-card .form-control:focus {
+    border-color: #2B2D6E;
+    box-shadow: 0 0 8px rgba(43, 45, 110, 0.2);
+    outline: none;
+}
+
+/* ===== Labels ===== */
+.login-card .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.25rem;
+}
+
+/* ===== Botón ===== */
+.login-card .btn-primary {
+    background-color: #2B2D6E;
+    color: #fff;
+    font-weight: 600;
+    font-size: 1rem;
+    padding: 0.65rem;
+    border-radius: 6px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-card .btn-primary:hover {
+    background-color: #1b1e4b;
+    transform: translateY(-2px);
+}
+
+/* ===== Mensajes de error ===== */
+.login-card .alert-danger {
+    background-color: #f8d7da;
+    color: #842029;
+    border-radius: 6px;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-size: 0.95rem;
+}
+
+/* ===== Placeholder ===== */
+::placeholder {
+    color: #aaa;
+    font-style: italic;
+}
+
+/* Link de registro */
+.register-link {
+    font-size: 0.95rem;
+    color: #333;
+    margin-top: 1rem;
+    text-align: center;
+}
+
+.register-link a {
+    color: #2B2D6E;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.register-link a:hover {
+    color: #1b1e4b;
+    text-decoration: underline;
+}
+
+/* Link de login en el registro */
+.login-card p a {
+    color: #2B2D6E;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.login-card p a:hover {
+    color: #1b1e4b;
+    text-decoration: underline;
+}
+
+
+/* ===== Responsive ===== */
+@media (max-width: 480px) {
+    .login-card {
+        width: 90%;
+        padding: 2rem;
+    }
+
+    .login-card h3 {
+        font-size: 1.5rem;
+    }
+}
